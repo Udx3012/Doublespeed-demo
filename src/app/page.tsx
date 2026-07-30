@@ -26,14 +26,9 @@ export default function LandingPage() {
   }
 
   return (
-    <main className="flex-1 flex flex-col items-center justify-center px-5 py-12 sm:py-16">
-      <div className="w-full max-w-xl text-center space-y-8">
+    <main className="flex-1 flex flex-col items-center justify-center px-5 py-8 sm:py-12">
+      <div className="w-full max-w-xl text-center space-y-6">
         <div className="space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-card/60 text-xs text-zinc-300 font-mono tracking-wide">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            Autonomous AI Video Marketing Engine
-          </div>
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight leading-tight text-white">
             Turn product URLs into high-converting
             {" "}

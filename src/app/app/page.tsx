@@ -69,15 +69,7 @@ export default function PitchDemoPage() {
   }, [step]);
 
   return (
-    <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12 w-full max-w-5xl mx-auto">
-      {/* Header Badge */}
-      <header className="mb-8 text-center space-y-2">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-sky-500/30 bg-sky-500/10 text-xs font-mono text-sky-300 tracking-wide">
-          <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          Autonomous Video Creation Engine — Demo Pitch
-        </div>
-      </header>
-
+    <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 pt-2 sm:pt-4 pb-6 sm:pb-8 w-full max-w-5xl mx-auto">
       {/* Step Stepper */}
       <Stepper current={step} />
 
@@ -133,7 +125,7 @@ function Stepper({ current }: { current: DemoStep }) {
   const currentIdx = steps.findIndex((s) => s.key === current);
 
   return (
-    <nav aria-label="Demo progress" className="w-full max-w-2xl mb-10 px-2">
+    <nav aria-label="Demo progress" className="w-full max-w-2xl mb-5 px-2">
       <div className="flex items-center justify-between">
         {steps.map((s, i) => {
           const isActive = i === currentIdx;
@@ -192,33 +184,33 @@ function SelectProductStep({
   onNext: () => void;
 }) {
   return (
-    <div className="w-full max-w-3xl space-y-8 animate-fadeIn">
-      <div className="text-center space-y-3">
-        <h1 className="text-3xl sm:text-4xl font-serif font-bold tracking-tight text-white">
+    <div className="w-full max-w-3xl space-y-4 animate-fadeIn">
+      <div className="text-center space-y-1.5">
+        <h1 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-white">
           Choose Target Product
         </h1>
-        <p className="text-sm sm:text-base text-zinc-400 max-w-lg mx-auto leading-relaxed">
+        <p className="text-xs sm:text-sm text-zinc-400 max-w-lg mx-auto leading-relaxed">
           Select a product showcase to initiate automated web scraping, script synthesis, and 9:16 ad video generation.
         </p>
       </div>
 
       {/* 3 Product Options */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {Object.values(PRODUCTS).map((prod) => {
           const isSelected = selectedKey === prod.id;
           return (
             <div
               key={prod.id}
               onClick={() => onSelectProduct(prod.id)}
-              className={`group relative p-6 rounded-2xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
+              className={`group relative p-4 rounded-2xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between ${
                 isSelected
                   ? "border-accent ring-2 ring-accent/40 bg-card/90 glowing-glow"
                   : "border-border/80 bg-card/40 hover:border-zinc-500 hover:bg-card/70"
               }`}
             >
-              <div className="space-y-3">
+              <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/80 text-zinc-300 uppercase tracking-wider">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-zinc-800/80 border border-zinc-700/80 text-zinc-300 uppercase tracking-wider">
                     {prod.badge}
                   </span>
                   <div
@@ -233,18 +225,18 @@ function SelectProductStep({
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-serif font-bold text-white group-hover:text-accent transition-colors">
+                  <h3 className="text-lg font-serif font-bold text-white group-hover:text-accent transition-colors">
                     {prod.name}
                   </h3>
-                  <p className="text-xs text-sky-400 font-mono mt-0.5">{prod.url}</p>
+                  <p className="text-[11px] text-sky-400 font-mono mt-0.5">{prod.url}</p>
                 </div>
 
-                <p className="text-xs text-zinc-400 leading-relaxed line-clamp-3">
+                <p className="text-[11px] text-zinc-400 leading-relaxed line-clamp-2">
                   {prod.description}
                 </p>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-zinc-800/60 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+              <div className="pt-3 mt-3 border-t border-zinc-800/60 flex items-center justify-between text-[11px] font-mono text-zinc-500">
                 <span>Presenter: <strong className="text-zinc-300">{prod.avatar.name}</strong></span>
                 <span className="text-accent group-hover:translate-x-1 transition-transform">Select &rarr;</span>
               </div>
@@ -254,8 +246,8 @@ function SelectProductStep({
       </div>
 
       {/* Greyed Out Custom Link Option */}
-      <div className="max-w-md mx-auto p-4 rounded-2xl border border-zinc-800/60 bg-zinc-950/40 opacity-60 cursor-not-allowed">
-        <div className="flex items-center justify-between mb-2">
+      <div className="max-w-md mx-auto p-3 rounded-2xl border border-zinc-800/60 bg-zinc-950/40 opacity-60 cursor-not-allowed">
+        <div className="flex items-center justify-between mb-1.5">
           <span className="text-xs font-mono text-zinc-400">Or enter custom product URL</span>
           <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-400 uppercase">
             Coming Soon (Pitch Demo)
@@ -266,11 +258,11 @@ function SelectProductStep({
             type="url"
             disabled
             placeholder="https://your-custom-product.com"
-            className="flex-1 px-3.5 py-2.5 rounded-xl bg-zinc-900/50 border border-zinc-800 text-xs text-zinc-500 placeholder:text-zinc-600 cursor-not-allowed focus:outline-none"
+            className="flex-1 px-3 py-1.5 rounded-xl bg-zinc-900/50 border border-zinc-800 text-xs text-zinc-500 placeholder:text-zinc-600 cursor-not-allowed focus:outline-none"
           />
           <button
             disabled
-            className="px-4 py-2.5 rounded-xl bg-zinc-800 text-zinc-500 text-xs font-semibold cursor-not-allowed"
+            className="px-3.5 py-1.5 rounded-xl bg-zinc-800 text-zinc-500 text-xs font-semibold cursor-not-allowed"
           >
             Submit
           </button>
@@ -278,10 +270,10 @@ function SelectProductStep({
       </div>
 
       {/* Action Bar */}
-      <div className="flex justify-center pt-2">
+      <div className="flex justify-center pt-1">
         <button
           onClick={onNext}
-          className="px-8 py-4 rounded-xl bg-accent hover:bg-sky-400 text-black text-sm font-bold tracking-wide transition-all shadow-lg shadow-sky-500/20 cursor-pointer flex items-center gap-2"
+          className="px-8 py-3.5 rounded-xl bg-accent hover:bg-sky-400 text-black text-sm font-bold tracking-wide transition-all shadow-lg shadow-sky-500/20 cursor-pointer flex items-center gap-2"
         >
           <span>Continue to Presenter Selection</span>
           <span className="text-base">&rarr;</span>
