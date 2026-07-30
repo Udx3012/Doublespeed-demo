@@ -1,0 +1,6 @@
+requests>=2.31
+playwright>=1.40
+openai>=1.0
+python-dotenv>=1.0
+browser-use>=0.1
+langchain-openai>=0.1

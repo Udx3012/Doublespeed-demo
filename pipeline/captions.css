@@ -1,0 +1,94 @@
+/* Reset html & body to prevent browser default margins/padding causing offset */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 1080px !important;
+    height: 1920px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* Video container — 1080x1920 viewport flex container */
+#video {
+    width: 1080px !important;
+    height: 1920px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+}
+
+/* Captions container — centered in upper-middle area with 90px side margins */
+.captions {
+    margin-top: 140px !important;
+    width: 900px !important;
+    max-width: 900px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Individual caption phrase block */
+.caption {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 900px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Word styling */
+.word {
+    display: inline-block !important;
+    font-family: 'Arial Black', 'Impact', sans-serif !important;
+    font-size: 44px !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    text-shadow:
+        3px 3px 0 #000000,
+        -3px -3px 0 #000000,
+        3px -3px 0 #000000,
+        -3px 3px 0 #000000 !important;
+    padding: 6px 12px !important;
+    margin: 4px 6px !important;
+    border-radius: 8px !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Currently highlighted word — solid yellow with dark semi-transparent pill */
+.word.highlighted {
+    color: #ffe600 !important;
+    background-color: rgba(0, 0, 0, 0.88) !important;
+    border-radius: 10px !important;
+    padding: 8px 16px !important;
+    text-shadow:
+        3px 3px 0 #000000,
+        -3px -3px 0 #000000,
+        3px -3px 0 #000000,
+        -3px 3px 0 #000000 !important;
+}
+
+/* Words before highlighted */
+.word.before-highlighted {
+    opacity: 0.75 !important;
+}
+
+/* Words after highlighted */
+.word.after-highlighted {
+    opacity: 0.75 !important;
+}
